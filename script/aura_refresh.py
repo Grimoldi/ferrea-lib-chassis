@@ -58,8 +58,7 @@ def main() -> None:
     except Exception:
         ex_type, ex_value, _ = sys.exc_info()
         print(
-            "::error::Unable to connect to db due to "
-            f"{ex_type.__name__}: {ex_value}."  # type: ignore
+            f"::error::Unable to connect to db due to {ex_type.__name__}: {ex_value}."  # type: ignore
         )
         exit(1)
 
