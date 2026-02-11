@@ -30,11 +30,6 @@ jobs:
               with:
                 path: .venv
                 key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-
-            # Install dependencies if cache does not exist
-            - name: Install dependencies
-              if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-              run: poetry install --no-interaction --without test
             
             - name: Invoke keepalive
               id: invoke-keepalive
