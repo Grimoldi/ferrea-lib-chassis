@@ -38,4 +38,5 @@ jobs:
                 DB_URI: ${{ secrets.DB_URI }}
                 DB_USER: ${{ secrets.DB_USER }}
                 DB_PWD: ${{ secrets.DB_PWD }}
+                DB_DB: ${{ secrets.DB_DB || 'neo4j' }}
               run: poetry run python ./script/aura_refresh.py
